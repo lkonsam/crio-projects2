@@ -29,7 +29,7 @@ function App() {
   };
 
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
+    <div style={{ padding: "20px" }}>
       <h1>Dictionary App</h1>
       <div>
         <input
