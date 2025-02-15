@@ -34,10 +34,13 @@ export default function App() {
       alert("Invalid date of birth. Date of birth cannot be in the future.");
       return;
     }
-
     // alert("Form submitted successfully!");
     setShowModal(false);
     setFormData({ username: "", email: "", phone: "", dob: "" });
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -46,8 +49,8 @@ export default function App() {
       <button onClick={() => setShowModal(true)}>Open Form</button>
 
       {showModal && (
-        <div className="modal">
-          <div className="modal-content">
+        <div className="modal" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h2>Fill Details</h2>
             <form onSubmit={handleSubmit}>
               <label htmlFor="username">Username:</label>
